@@ -1,0 +1,79 @@
+//-=-=-=-=-= Exercise 2.1 - Looping a triangle -=-=-=-=-=//
+// created a function that takes in a length parameter
+// this length parameter will determine how tall
+// your console triangle will be.
+// The scope in the books exercise was to create half a triangle
+// but I will create a full triangle just for fun
+
+const triangleCreator = length => {
+    let floor = '';
+    while(floor.length < length) {
+        floor = `${floor}#`;
+        console.log(floor)
+    }
+    while(floor.length > 0){
+        floor = floor.substring(0, floor.length - 1);
+        console.log(floor)
+    }
+};
+
+//-=-=-=-=-= Test Cases 2.1 - Looping a triangle -=-=-=-=-=//
+
+// triangleCreator(14)
+// triangleCreator(11)
+// triangleCreator(3)
+
+//-=-=-=-=-= Exercise 2.2 - FizzBuzz -=-=-=-=-=//
+const fizBuzz = length => {
+    for(let i = 1; i <= length; i++){
+        //if index mod 3 or index mod 5 equal zero
+        if(i % 3 === 0 || i % 5 === 0){
+            //if index mod 3 and index mod 5 equal zero log fizzbuz
+            if(i % 5 === 0 && i % 3 === 0){
+                console.log('fizbuzz')
+            }else if(i % 3 === 0){
+                //if index mod 3 log fizz
+                console.log('fizz')
+            }else {
+                //else log buzz
+                console.log('buzz')
+            }
+        } else {
+             //if index mod 3 or index mod 5 dont equal zero log the index
+            console.log(i)
+        }
+    }
+};
+//-=-=-=-=-= Test Cases 2.2 - FizzBuzz -=-=-=-=-=//
+
+// fizBuzz(15);
+// fizBuzz(100);
+
+//-=-=-=-=-= Exercise 2.3 - Chessboard -=-=-=-=-=//
+
+const chessboard = length => {
+    let pound = false;
+    let board = '';
+    let row = '';
+    for(let i = 1; i <= length; i++){
+        row = '';
+        for(let j = 0; j <= length; j++){
+            if(row.length === length){
+                row = `${row}\n`;
+                pound = !pound;
+            }else{
+                row = pound ? `${row}#` : `${row} `;
+                pound = !pound;
+            }
+        }
+        board = `${board}${row}`;
+    }
+    return board
+};
+
+
+//-=-=-=-=-= Test Cases 2.3 - Chessboard -=-=-=-=-=//
+
+// console.log(chessboard(8));
+// console.log(chessboard(12));
+// console.log(chessboard(24));

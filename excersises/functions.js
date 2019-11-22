@@ -39,3 +39,19 @@ const isEven = (num) => {
 // // → false
 // console.log(isEven(-24));
 // // → true
+
+//-=-=-=-=-= Exercise 3.3 - Bean counting -=-=-=-=-=//
+
+const countBs = str => str.split('').filter(letter => letter === 'B').length;
+
+const countChar = (str, char) => str.split('').filter(letter => letter === char).length;
+
+
+//-=-=-=-=-= Test Cases 3.3 - Bean counting -=-=-=-=-=//
+
+// console.log(countBs("BBC"));
+// // → 2
+// console.log(countBs("Before you Believed Because Billy"));
+// // → 3
+// console.log(countChar("kakkerlak", "k"));
+// // → 4
